@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django migratsiya fayllari (ixtiyoriy)
+**/migrations/*.pyc
+**/migrations/*.pyo
+**/migrations/*.py~
+
+# Baza fayli (local SQLite)
+*.sqlite3
+
+# Secret fayllar
+.env
+.env.*
+
+# VSCode / PyCharm va boshqa editor fayllari
+.vscode/
+.idea/
+
+# OS fayllari
+.DS_Store
+Thumbs.db
+
+# Virtualenv
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Pytest va coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+.cache
+.pytest_cache/
+
+# Logs
+*.log
+
+# Static/media fayllar (agar collectstatic bilan yaratilsa)
+staticfiles/
+static/
+media/
+
+# node.js fayllari (agar frontend ham bo‘lsa)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build
+build/
+dist/
+*.egg-info/
+.eggs/
+MANIFEST
+
+# __init__ fayllari ehtiyotkorlik bilan
+**/__init__.pyc

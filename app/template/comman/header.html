@@ -44,11 +44,36 @@
                     <li class="tt-dropdown-wrap tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
                         <a href="#0">EN</a>
                         <ul class="tt-dropdown">
-                            <li><a href="" title="English"><img src="assets/img/flags/gb.png" alt="English"> EN</a></li>
-                            <li><a href="" title="French"><img src="assets/img/flags/fr.png" alt="French"> FR</a></li>
-                            <li><a href="" title="Deutsch"><img src="assets/img/flags/de.png" alt="Deutsch"> DE</a></li>
-                        </ul> <!-- /.tt-dropdown -->
+                            <li>
+                                <form action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <input name="language" type="hidden" value="en">
+                                    <button type="submit" title="English">
+                                        <img src="" alt="English"> EN
+                                    </button>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <input name="language" type="hidden" value="fr">
+                                    <button type="submit" title="French">
+                                        <img src="" alt="French"> FR
+                                    </button>
+                                </form>
+                            </li>
+                            <li>
+                                <form action="{% url 'set_language' %}" method="post">
+                                    {% csrf_token %}
+                                    <input name="language" type="hidden" value="de">
+                                    <button type="submit" title="Deutsch">
+                                        <img src="" alt="Deutsch"> DE
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
                     </li>
+                    
                     <!-- End tt-dropdown -->
 
                     <!-- Begin call to action button -->

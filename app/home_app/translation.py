@@ -7,4 +7,4 @@ class HomeContentTranslationOptions(TranslationOptions):
 
 @register(TestimonialsContent)
 class TestimonialsContentTranslationOptions(TranslationOptions):
-    fields = ('full_name', 'comment') 
+    fields = ('full_name', 'commint') 

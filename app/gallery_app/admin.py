@@ -7,21 +7,29 @@ class GalleryContentAdmin(admin.ModelAdmin):
     search_fields = ('title', 'subtitle')
     list_filter = ('category',)
     list_per_page = 20
-
     fieldsets = (
-        ('TITLE', {
+        ('КАТЕГОРИЯ И ИЗОБРАЖЕНИЕ', {
             'classes': ('collapse',),
-            'fields': ('title_uz', 'title_ru', 'title_en', 'title_tr')
+            'fields': ('category', 'image'),
         }),
-        ('SUBTITLE', {
+        ('ЗАГОЛОВОК ПОДЗАГОЛОВОК [UZ]', {
             'classes': ('collapse',),
-            'fields': ('subtitle_uz', 'subtitle_ru', 'subtitle_en', 'subtitle_tr')
+            'fields': ('title_uz', 'subtitle_uz'),
         }),
-        ('IMAGE', {
+        ('ЗАГОЛОВОК ПОДЗАГОЛОВОК [EN]', {
             'classes': ('collapse',),
-            'fields': ('category','image',)
+            'fields': ('title_en', 'subtitle_en'),
+        }),
+        ('ЗАГОЛОВОК ПОДЗАГОЛОВОК [RU]', {
+            'classes': ('collapse',),
+            'fields': ('title_ru', 'subtitle_ru'),
+        }),
+        ('ЗАГОЛОВОК ПОДЗАГОЛОВОК [TR]', {
+            'classes': ('collapse',),
+            'fields': ('title_tr', 'subtitle_tr'),
         }),
     )
+
 
 
 @admin.register(Category)
@@ -29,3 +37,10 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')             
     search_fields = ('name',)                
     list_per_page = 20       
+    
+    fieldsets = (
+    ('TITLE', {
+        'classes': ('collapse',),
+        'fields': ['name_uz', 'name_ru', 'name_en', 'name_tr']
+    }),
+    )

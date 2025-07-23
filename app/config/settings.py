@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'modeltranslation',
     'ckeditor',
+    'sorl.thumbnail',
 
     'gallery_app',
     'home_app',

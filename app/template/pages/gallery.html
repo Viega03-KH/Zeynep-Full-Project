@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% block title %}Galereya{% endblock %}
+
+{% block content %}{% load static %}
+<div id="body-content">
+
+    <section id="gallery-single-section" class="gallery-single-carousel gs-carousel-center">
+        <div class="page-background bg-image" style="background-image: url(" {% static "zeynep-resurs/logo-bg.jpeg"%}");"></div>
+        <div class="gallery-single-carousel-inner tt-wrap">
+            <div style="height:100vh" class="gs-carousel-wrap">
+                <div class="owl-carousel lightgallery cc-height-full owl-mousewheel nav-light cc-hover-light"
+                    data-items="3" data-center="true" data-margin="1" data-autoplay="true" data-autoplay-timeout="8000"
+                    data-autoplay-speed="2000" data-autowidth="true" data-loop="true" data-nav="true"
+                    data-nav-speed="2000" data-dots="false">
+
+
+                    {% for gallery in gallery_list %}
+                    <a href="{{ gallery.image.url }}" class="cc-item lg-trigger"
+                        data-exthumbnail="{{ gallery.image.url }}">
+                        <img class="cc-image cc-auto-width-img" src="{{ gallery.image.url }}" alt="">
+                        <div class="cc-image cc-auto-width-img-bg bg-image" style="background-image: url('{{ gallery.image.url }}');">
+                        </div>
+
+                        <div class="gsi-image-caption">{{ gallery.category }}</div>
+                    </a>
+                    {% endfor %}
+
+                </div>
+                <ul class="gallery-meta">
+                    <li>
+                        <a href="albums-carousel-no-crop.html" class="gm-go-back" title="Back to albums">
+                            <i class="fas fa-th"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="content-modal-trigger">
+                            <a href="#0" class="content-modal-icon" title="Info" data-toggle="modal"
+                                data-target="#modal-78431234">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                        </div>
+                        <div id="modal-78431234" class="modal modal-left fade" tabindex="-1" role="dialog"
+                            aria-hidden="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
+                                                class="tt-close-btn"></i></button>
+                                        <h4 class="modal-title">Info:</h4>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="modal-body-image-1 bg-image"
+                                            style="background-image: url(assets/img/gallery/gallery-list/gallery-list-6.jpg); background-position: 50% 50%;">
+                                        </div>
+                                        <div class="modal-body-content">
+                                            <div class="tt-heading tt-heading-lg">
+                                                <div class="tt-heading-inner">
+                                                    <h1 class="tt-heading-title">The Coolest Photo Project I've Ever
+                                                        Created</h1>
+
+                                                </div>
+                                            </div>
+                                            <div class="margin-top-20">
+                                                <p>Integer viverra arcu ac facilisis interdum. Proin dignissim sagittis
+                                                    tellus. Duis et pharetra est, vel ullamcorper libero. Fusce sed leo
+                                                    in dolor ornare fermentum. Sed facilisis eu justo at mattis. Lorem
+                                                    ipsum dolor sit amet, consectetur adipiscing elit. Aliquam congue
+                                                    malesuada eros, ut varius metus accumsan non. Pellentesque facilisis
+                                                    tortor risus, quis convallis nunc faucibus et. Proin egestas
+                                                    pulvinar sem, sit amet auctor ligula faucibus quis. Maecenas in
+                                                    libero nec turpis molestie dictum. Suspendisse id mi eget mi
+                                                    suscipit faucibus vitae eu metus.</p>
+
+                                                <p>Integer accumsan iaculis pharetra. Curabitur ultricies ut justo at
+                                                    hendrerit. Sed quis condimentum dui. In ac nunc leo. Quisque erat
+                                                    sem, consequat at rutrum at, ultricies nec sapien. Sed hendrerit
+                                                    libero augue, sit amet ultricies urna tincidunt at. In hac habitasse
+                                                    platea dictumst. Vivamus et sem nec velit scelerisque molestie.
+                                                    Suspendisse tempus posuere venenatis.</p>
+                                            </div>
+
+                                            <a href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium"
+                                                class="btn btn-primary" target="_blank">Buy this theme!</a>
+                                            <div class="social-buttons margin-top-40">
+                                                <ul>
+                                                    <li><strong>Share:</strong> </li>
+                                                    <li><a href=""
+                                                            class="btn btn-social-min btn-facebook btn-sm btn-rounded-full"
+                                                            title="Share on Facebook"><i
+                                                                class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href=""
+                                                            class="btn btn-social-min btn-twitter btn-sm btn-rounded-full"
+                                                            title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                                                    </li>
+                                                    <li><a href=""
+                                                            class="btn btn-social-min btn-google btn-sm btn-rounded-full"
+                                                            title="Share on Google+"><i
+                                                                class="fab fa-google-plus-g"></i></a></li>
+                                                    <li><a href=""
+                                                            class="btn btn-social-min btn-pinterest btn-sm btn-rounded-full"
+                                                            title="Share on Pinterest"><i
+                                                                class="fab fa-pinterest-p"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        &copy; Sepia 2017 / All rights reserved
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="content-share-trigger">
+                            <a href="#0" class="content-share-icon" title="Share this gallery" data-toggle="modal"
+                                data-target="#modal-67306173">
+                                <i class="fas fa-share-alt"></i>
+                            </a>
+                        </div>
+                        <div id="modal-67306173" class="modal modal-center fade" tabindex="-1" role="dialog"
+                            aria-hidden="false">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i
+                                                class="tt-close-btn"></i></button>
+                                        <h4 class="modal-title">Share This Gallery:</h4>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="modal-body-image-1 bg-image"
+                                            style="background-image: url(assets/img/gallery/gallery-list/gallery-list-6.jpg); background-position: 50% 50%;">
+                                        </div>
+                                        <div class="modal-body-content">
+                                            <div class="modal-share">
+                                                <div class="social-buttons">
+                                                    <ul>
+                                                        <li><a href="#0"
+                                                                class="btn btn-social-min btn-facebook btn-rounded-full"
+                                                                title="Share on facebook"><i
+                                                                    class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="#0"
+                                                                class="btn btn-social-min btn-twitter btn-rounded-full"
+                                                                title="Share on twitter"><i
+                                                                    class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="#0"
+                                                                class="btn btn-social-min btn-google btn-rounded-full"
+                                                                title="Share on google+"><i
+                                                                    class="fab fa-google-plus-g"></i></a></li>
+                                                        <li><a href="#0"
+                                                                class="btn btn-social-min btn-pinterest btn-rounded-full"
+                                                                title="Share on pinterest"><i
+                                                                    class="fab fa-pinterest-p"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                <input class="grab-link" type="text" readonly=""
+                                                    value="https://yoursite.com/your-gallery-link/"
+                                                    onclick="this.select()">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        &copy; Sepia 2017 / All rights reserved
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="favorite-btn">
+                            <div class="fav-inner">
+                                <div class="icon-heart">
+                                    <span class="icon-heart-empty"></span>
+                                    <span class="icon-heart-filled"></span>
+                                </div>
+                            </div>
+                            <div class="fav-count">47</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% include "comman/top-footer.html"%}
+{% endblock %}

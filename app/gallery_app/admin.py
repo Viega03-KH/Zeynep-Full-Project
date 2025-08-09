@@ -3,7 +3,7 @@ from .models import Category, GalleryContent
 
 @admin.register(GalleryContent)
 class GalleryContentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'category', 'image')
+    list_display = ('title', 'category', 'image', 'id')
     search_fields = ('title', 'subtitle')
     list_filter = ('category',)
     list_per_page = 20

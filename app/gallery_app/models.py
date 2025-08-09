@@ -12,17 +12,23 @@ class Category(models.Model):
         return self.name
 
 
+import os
+from PIL import Image
+from django.db import models
+
 class GalleryContent(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Категория")
-    title = models.CharField('Заголовок', max_length=200, default='GalleryContent title')
-    subtitle = models.TextField('контент', default='GalleryContent subtitle')
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name="Категория")
+    title = models.CharField('Заголовок', max_length=200, null=True, blank=True)
+    subtitle = models.TextField('контент', default='GalleryContent subtitle', null=True, blank=True)
     image = models.ImageField('изображение', upload_to='gallery/GalleryContent')
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     class Meta:
-        verbose_name = 'Галрей контент'
+        verbose_name = 'Галерея контент'
 
     def __str__(self):
-        return self.title
+        return self.title.strip() if self.title and self.title.strip() else "безымянный"
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -30,12 +36,24 @@ class GalleryContent(models.Model):
         if self.image:
             img_path = self.image.path
             img = Image.open(img_path)
-            max_size = (1280, 900)  
-            img.thumbnail(max_size, Image.LANCZOS)  
-            img_format = img.format
-            if img_format == 'JPEG':
+
+            # Maksimal o'lchamni belgilash
+            max_size = (1280, 900)
+            img.thumbnail(max_size, Image.LANCZOS)
+
+            # Fayl kengaytmasini olish
+            ext = os.path.splitext(img_path)[1].lower()
+
+            # JPEG optimizatsiya
+            if ext in ['.jpg', '.jpeg']:
+                img = img.convert("RGB")  # Rang profilini moslashtirish
                 img.save(img_path, format='JPEG', quality=88, optimize=True, progressive=True)
-            elif img_format == 'PNG':
+
+            # PNG optimizatsiya
+            elif ext == '.png':
                 img.save(img_path, format='PNG', optimize=True)
-            else:
-                img.save(img_path) 
+
+            # WebP formatida ham saqlash imkoniyati
+            # webp_path = img_path.rsplit('.', 1)[0] + '.webp'
+            # img.save(webp_path, format='WEBP', quality=85, method=6)
+

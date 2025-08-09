@@ -1,121 +1,44 @@
 <header id="header" class="header-transparent header-show-hide-on-scroll menu-align-right">
-
-    <!-- Begin header inner -->
     <div class="header-inner tt-wrap">
-        <!-- add/remove class "tt-wrap" to enable/disable element boxed layout (class "tt-boxed" is required in <body> tag! ) -->
-
-        <!-- ====================
-        //// Begin main menu ////
-        ===================== -->
         <nav class="tt-main-menu">
-
-            <!-- Begin mobile menu toggle button -->
             <div id="tt-m-menu-toggle-btn">
                 <span></span>
             </div>
-            <!-- End mobile menu toggle button -->
-
-            <!-- Begin menu tools 
-            ====================== -->
             <div class="tt-menu-tools">
                 <ul>
-                    <!-- Begin search -->
-                    <li>
-                        <a href="#" class="tt-clobal-search-trigger"><i class="fas fa-search"></i></a>
-                        <div class="tt-clobal-search">
-                            <div class="tt-clobal-search-inner">
-                                <span class="tt-clobal-search-title">Search</span>
-                                <form id="tt-clobal-search-form" class="form-btn-inside" method="get"
-                                    action="search-results.html">
-                                    <input type="text" id="tt-clobal-search-input" name="search"
-                                        placeholder="Type your keywords ...">
-                                    <button type="submit"><i class="fas fa-search"></i></button>
-                                </form>
-                            </div> <!-- /.tt-clobal-search-inner -->
-                            <div class="tt-clobal-search-close"><i class="tt-close-btn tt-close-light"></i></div>
-                        </div> <!-- /.tt-clobal-search -->
-                    </li>
-                    <!-- End search -->
-
-                    <!-- Begin tt-dropdown (languages) 
-                    ===================================
-                    * Use class "tt-dropdown-dark" to enable dropdown dark style.
-                    -->
                     <li class="tt-dropdown-wrap tt-dropdown-master tt-dropdown-dark tt-dropdown-right tt-tools-lang">
-                        <a href="#0">EN</a>
+                        <a href="#0" >EN</a>
                         <ul class="tt-dropdown">
-                            <li>
-                                <form action="{% url 'set_language' %}" method="post">
-                                    {% csrf_token %}
-                                    <input name="language" type="hidden" value="en">
-                                    <button type="submit" title="English">
-                                        <img src="" alt="English"> EN
-                                    </button>
-                                </form>
-                            </li>
-                            <li>
-                                <form action="{% url 'set_language' %}" method="post">
-                                    {% csrf_token %}
-                                    <input name="language" type="hidden" value="fr">
-                                    <button type="submit" title="French">
-                                        <img src="" alt="French"> FR
-                                    </button>
-                                </form>
-                            </li>
-                            <li>
-                                <form action="{% url 'set_language' %}" method="post">
-                                    {% csrf_token %}
-                                    <input name="language" type="hidden" value="de">
-                                    <button type="submit" title="Deutsch">
-                                        <img src="" alt="Deutsch"> DE
-                                    </button>
-                                </form>
-                            </li>
+                            <li><a href="/en/" title="English">EN</a></li>
+                            <li><a href="/tr/" title="Turkish">TR</a></li>
+                            <li><a href="/uz/" title="Uzbek">UZ</a></li>
+                            <li><a href="/ru/" title="Russian">РУ</a></li>
                         </ul>
                     </li>
                     
-                    <!-- End tt-dropdown -->
-
-                    <!-- Begin call to action button -->
                     <li>
-                        <a href="https://themeforest.net/item/sepia-photography-portfolio-html-website-template/20195226?ref=Themetorium"
-                            class="tt-tools-button" target="_blank">Buy<span class="hide-from-sm"> This
-                                Theme</span>!</a>
+                        {% include "components/btn.html" %}
                     </li>
-                    <!-- End call to action button -->
                 </ul>
             </div>
-            <!-- End menu tools -->
-
-            <!-- Collect the nav links for toggling 
-            ========================================
-            * Use class "tt-submenu-dark" to enable submenu dark style.
-            -->
             <div class="tt-menu-collapse tt-submenu-dark">
                 <ul class="tt-menu-nav">
-
-                    <!-- Begin submenu (submenu master)
-                    ==================================== -->
                     <li>
-                        <a href="#0">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#0">About</a>
+                        <a href="zeynep-news">News</a>
                     </li>
                     <li>
-                        <a href="#0">Gallery</a>
+                        <a href="zeynep-about">About</a>
                     </li>
                     <li>
-                        <a href="#0">Contact</a>
+                        <a href="zeynep-contact">Contact</a>
                     </li>
 
-                </ul> <!-- /.tt-menu-nav -->
-            </div> <!-- /.tt-menu-collapse -->
+                </ul>
+            </div>
 
         </nav>
-        <!-- End main menu -->
-
     </div>
-    <!-- End header inner -->
-
 </header>

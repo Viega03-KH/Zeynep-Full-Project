@@ -1,54 +1,28 @@
-{% load static %}
-<section id="gallery-list-section">
-    <div class="tt-heading tt-heading-lg padding-on text-center">
-        <div class="tt-heading-inner tt-wrap"> 
-            <h1 class="tt-heading-title">Latest Works</h1>
-            <div class="tt-heading-subtitle">My latest photo projects / <a href="categories-grid.html">View All</a></div>
-            <hr class="hr-short">
-        </div> 
+<section id="latest-work-section" class="tt-heading tt-heading-lg padding-on text-start">
+    <div class="tt-heading-inner tt-wrap">
+        <h1 class="tt-heading-title">GALLERY</h1>
+        <div class="tt-heading-subtitle">KARDIGAN, TROYKA &amp; TROYKA, DVOYKA</div>
+        <hr class="hr-short">
     </div>
-    <div class="isotope-wrap"> 
-        <div class="isotope col-4">
-            <div class="isotope-items-wrap gli-colored gli-alter-4">
-                <div class="grid-sizer"></div>
+    <div class="latest-work-inner">
+        <div class="project-carousel">
+            <div class="owl-carousel cc-height-4 dots-right" data-items="4" data-margin="25"
+                data-loop="true" data-nav="true" data-nav-speed="200" data-autoplay="true" data-autoplay-timeout="2000"
+                data-autoplay-speed="2000" data-autoplay-hover-pause="true" data-tablet-landscape="3"
+                data-tablet-portrait="2" data-mobile-landscape="1" data-mobile-portrait="1">
+
                 {% for gallery in gallery_list %}
-                <div class="isotope-item iso-height-2">
-                    <div class="gallery-list-item">
-                        <div class="gl-item-image-wrap">
-                            <a href="gallery-single-grid.html" class="gl-item-image-inner">
-                                <div class="gl-item-image bg-image" style="background-image: url({{ gallery.image.url }}); background-position: 75% 30%;"></div>
-                                <span class="gl-item-image-zoom"></span>
-                            </a>
-                            <ul class="gli-meta">
-                                <li>
-                                    <div class="favorite-btn">
-                                        <div class="fav-inner">
-                                            <div class="icon-heart">
-                                                <span class="icon-heart-empty"></span>
-                                                <span class="icon-heart-filled"></span>
-                                            </div>
-                                        </div>
-                                        <div class="fav-count">49</div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="gl-item-info">
-                            <div class="gl-item-caption">
-                                <h2 class="gl-item-title"><a href="gallery-single-grid.html">The Old Man Dreams</a></h2>
-                                <span class="gl-item-category"><a href="albums-archive.html">Outdoor</a></span>
-                            </div>
-                        </div>
+                <a href="gallery-single-grid.html" class="cc-item cc-caption-on">
+                    <div class="cc-image"
+                        style="background-image: url('{{ gallery.image.url }}'); background-size: cover; background-position: 50% 50%;">
                     </div>
-                </div>
+                    <div class="cc-caption top-left max-width-400 "> 
+                        <!-- <h2 class="cc-title">{{ gallery.title }}</h2>
+                        <div class="cc-category"><span>{{ gallery.category }}</span></div> -->
+                    </div>
+                </a>
                 {% endfor %}
             </div>
         </div>
-    </div> 
-</section>
-
-<div class="isotope-pagination">
-    <div class="iso-load-more">
-        <a class="btn btn-dark-bordered btn-lg" href="">View More <i class="fas fa-refresh"></i></a>
     </div>
-</div>
+</section>

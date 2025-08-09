@@ -58,3 +58,20 @@ class TestimonialsContentAdmin(admin.ModelAdmin):
         'fields': ('commint_tr',)
     }),
 )
+
+
+# admin.py
+from django.contrib.admin import AdminSite
+from django.utils import timezone
+
+class MyAdminSite(AdminSite):
+    site_header = "Mening Admin Panelim"
+
+    def index(self, request, extra_context=None):
+        if extra_context is None:
+            extra_context = {}
+        extra_context['test_number'] = 12345
+        return super().index(request, extra_context=extra_context)
+
+admin_site = MyAdminSite(name="myadmin")
+

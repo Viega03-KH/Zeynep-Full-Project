@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block title %}News{% endblock %}
+{% block content %}
+<div id="body-content">
+
+    <section id="blog-list-section" class="blog-list-grid">
+        <div class="blog-list-inner tt-wrap">
+            <div class="row no-margin">
+                <div class="col-md-8 no-padding-left no-padding-right">
+                    <div class="isotope-wrap">
+                        <div class="archive-info-box text-center">
+                            <div class="ai-box-subtitle"></div>
+                            <h1 class="ai-box-title">Our news</h1>
+                            <hr class="hr-short">
+                        </div>
+                        <div class="isotope col-2 gutter-1">
+                            <div class="isotope-items-wrap no-margin">
+                                <div class="grid-sizer"></div>
+                                {% for news in news_list %}
+                                <div class="isotope-item">
+                                    <article class="blog-list-item">
+                                        <a href="blog-single.html" class="bl-item-image"><img
+                                                src="{{ news.image.url }}" alt="image"></a>
+                                        <div class="bl-item-info">
+                                            <div class="bl-item-category"><a href="blog-archive-3.html">{{ news.category }}</a>
+                                            </div>
+                                            <a href="blog-single.html" class="bl-item-title">
+                                                <h4>{{ news.title }}</h4>
+                                            </a>
+                                            <div class="bl-item-meta">
+                                                <span class="published">{{ news.created_at }}</span>
+                                            </div>
+                                            <!-- <div class="bl-item-desc" data-max-words="6">{{ news.subtitle }}</div> -->
+                                            <a href="blog-single.html" class="bl-item-read-more"
+                                                title="Read More"><span></span></a>
+                                        </div>
+                                    </article>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <nav class="pagination-wrap">
+                        <ul class="pagination">
+                            <li>
+                                <a href="" aria-label="Previous">
+                                    <span aria-hidden="true">First</span>
+                                </a>
+                            </li>
+                            <li><a href="">Prev</a></li>
+                            <li class="active"><a href="#0">1</a></li>
+                            <li><a href="">2</a></li>
+                            <li><a href="">3</a></li>
+                            <li>...</li>
+                            <li><a href="">6</a></li>
+                            <li><a href="">7</a></li>
+                            <li><a href="">8</a></li>
+                            <li><a href="">Next</a></li>
+                            <li>
+                                <a href="" aria-label="Next">
+                                    <span aria-hidden="true">Last</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="pagination-info">
+                            <span>Showing page 1 of 8</span>
+                            <span>Items 1 - 5 of 40</span>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="col-md-4 no-padding-left no-padding-right">
+                    <div class="sidebar sidebar-right">
+                        <div class="row">
+
+                            <div class="col-sm-12">
+                                <div class="sidebar-widget sidebar-search">
+                                    <h3 class="sidebar-heading">Search</h3>
+                                    <form id="blog-search-form" class="form-btn-inside" method="get"
+                                        action="search-results.html">
+                                        <div class="form-group no-margin">
+                                            <input type="text" class="form-control" id="blog-search" name="search"
+                                                placeholder="Search...">
+                                            <button type="submit"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-6">
+
+                                <!-- Begin sidebar widget -->
+                                <div class="sidebar-widget sidebar-photo-stream">
+                                    <h3 class="sidebar-heading"><i class="fab fa-instagram"></i> Instagram</h3>
+
+                                    <!-- Begin thumbnail list 
+											==========================
+											* Use class "col-2", "col-3", "col-4" "col-5" or "col-6" for thumbnail list columns.
+											* Use class "gutter-1", "gutter-2", "gutter-3", "gutter-4" or "gutter-5" to add more space between items.
+											-->
+                                    <ul class="thumb-list col-4 gutter-5">
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-1.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-2.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-3.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-4.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-5.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-6.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-7.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-8.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-9.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-10.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-11.jpg);"></a>
+                                        </li>
+                                        <li><a href="#" class="thumb-list-item bg-image"
+                                                style="background-image: url(assets/img/blog/small/img-12.jpg);"></a>
+                                        </li>
+
+                                    </ul>
+                                    <!-- End thumbnail list -->
+
+                                </div>
+                                <!-- End sidebar widget -->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% include "comman/top-footer.html"%}
+{% endblock content %}

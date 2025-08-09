@@ -3,15 +3,13 @@
 {% block title %}Galereya{% endblock %}
 
 {% block content %}{% load static %}
-    <div id="body-content">
-
-        {% include "content/home/intro.html"%}
-        {% include "content/home/about.html"%}
-        {% include "content/home/gallery.html"%}
-        {% include "content/home/testimonials.html"%}
-        {% include "content/home/latest-news.html"%}
-        {% include "content/home/call-to.html"%}
-
-
-    </div>
+<div id="body-content">
+    {% include "content/home/home-intro.html"%}
+    {% comment %} {% include "content/home/about.html"%}
+    {% include "content/home/gallery.html"%}
+    {% include "content/home/testimonials.html"%}
+    {% include "content/home/latest-news.html"%} {% endcomment %}
+</div>
+{% include "comman/top-footer.html"%}
 {% endblock %}
+
